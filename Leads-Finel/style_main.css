@@ -1,0 +1,155 @@
+/*----------------------------------ID--------------------------------------*/
+
+#SecondQ {
+    display: none;
+    height: 0%;
+}
+
+#ThirdQ {
+    display: none;
+    height: 0%;
+}
+
+#FourthQ {
+    display: none;
+    height: 0%;
+}
+
+#FifthQ {
+    display: none;
+    height: 0%;
+}
+
+::placeholder{
+    color: black;
+}
+
+#SixthQ {
+    display: none;
+    height: 0%;
+}
+
+#SeventhQ {
+    display: none;
+    height: 0%;
+}
+
+#EighthQ {
+    display: none;
+    height: 0%;
+}
+
+#NinthQ{
+    display: none;
+    height: 0%;   
+}
+
+#FormId{
+    display: none;
+    height: 0%;    
+}
+
+#FirstName{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding-left: 0px;
+    border-radius: 0%;
+    border-bottom-color: black;
+}
+
+#LastName{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding-left: 0px;
+    border-radius: 0%;
+    border-bottom-color: black;
+}
+
+#example-tel-input{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding-left: 0px;
+    border-radius: 0%;
+    border-bottom-color: black;
+}
+
+#DataSheet {
+    display: none;
+    height: 0%;
+}
+
+#Loading{
+    display: none;
+}
+
+#HoverWhite:hover{
+    background-color: white;
+    color: black;
+}
+
+#IsoImageMobile{
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+#MainImage{
+    width: 50%; 
+    height: 120px; 
+    margin: auto;
+    display: none;
+}
+
+/*----------------------------------Classes--------------------------------------*/
+
+.PreviousBtns {
+    width: 123px;
+    height: 48px;
+    margin-top: 20px;
+}
+
+.NextBtns {
+    width: 123px;
+    height: 48px;
+    margin-top: 20px;
+}
+
+.fa-exclamation-triangle{
+    color: lightcoral;
+}
+
+.container {
+    padding-top: 40px;  
+}
+
+.row button.btn-outline-dark:hover{
+    background-color: white;
+}
+.row button.btn-outline-dark{
+    color: black;
+}
+
+/*----------------------------------TAGS-----------------------------------------*/
+
+hr {
+    border: 1px solid #52616b;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form{
+    padding-bottom: 1cm;
+}
+
+#Mexample-tel-input.-placeholder::-webkit-input-placeholder {
+    color: #0000ff;
+}
+
+span{
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+}

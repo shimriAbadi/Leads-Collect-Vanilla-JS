@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etes - vous éligible ?</title>
+    <link rel="stylesheet" href="style_main.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+</head>
+
+<body style="padding-top: 15px;background-color: #dcedc1;" onload=""  >
+
+    <div class="container-fluid">
+
+        <div class="col-md-12" id="MainImage" >
+            <center><img src="./Images/resizedImage-no-bg.png" alt="" ></center>
+        </div>
+
+        <img src="./Images/Logo9iso.png" alt="" id="IsoImageMobile" >
+        
+        <div class="progress" style="position:-webkit-sticky; top: 10px; background-color: #dcedc1; position: sticky;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+                id="progressBarFill" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+        </div>
+
+        <div class="container-fluid">
+
+            <div class="row" id="FristQ">
+                <div class="col-md-12">
+                    <p class="text-center">
+                        <span>Etes-vous propriétaire du logement où vous devez réaliser les travaux ?</span>
+                    </p>
+                    <button type="button" class="btn btn-outline-dark btn-block" onclick="FirstUserAnswer=true"
+                        id="FirstYes">
+                        Oui
+                    </button>
+                    <button type="button" class="btn btn-outline-dark btn-block" onclick="FirstUserAnswer=false"
+                        id="FirstNo">
+                        Non
+                    </button>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info PreviousBtns text-right"
+                                    disabled id="FirstPrevious">
+                                    Précédent
+                                </button></center>
+                        </div>
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info NextBtns"
+                                    onclick="FirstQuest(FirstUserAnswer)" id="FirstNext">
+                                    Suivant
+                                </button></center>
+                        </div>
+                    </div>
+                    <hr id="hr1">
+                </div>
+            </div>
+
+            <div class="row" id="FourthQ"  >
+                <div class="col-md-12">
+                    <p class="text-center">
+                        <span>Quel est votre département de résidence ?</span>
+                    </p>
+                    <select class="custom-select" id="AreaSelection" >
+                        <option id="NoSelectionStyle" value="NoSelection" selected>------ Veuillez sélectionner --------
+                        </option>
+                        <option value="01-Ain">01-Ain</option>
+                        <option value="02-Aisne">02-Aisne</option>
+                        <option value="03-Allier">03-Allier</option>
+                        <option value="05-Hautes Alpes">05-Hautes Alpes</option>
+                        <option value="08-Ardennes">08-Ardennes</option>
+                        <option value="10-Aube">10-Aube</option>
+                        <option value="14-Calvados">14-Calvados</option>
+                        <option value="15-Cantal">15-Cantal</option>
+                        <option value="19-Corrèze">19-Corrèze</option>
+                        <option value="21-Cote d’or">21-Cote d’or</option>
+                        <option value="23-Creuse">23-Creuse</option>
+                        <option value="25-Doubs">25-Doubs</option>
+                        <option value="27-Eure">27-Eure</option>
+                        <option value="28-Eure et Loir">28-Eure et Loir</option>
+                        <option value="38-Isère">38-Isère</option>
+                        <option value="39-Jura">39-Jura</option>
+                        <option value="42-Loire">42-Loire</option>
+                        <option value="43-Haute Loire">43-Haute Loire</option>
+                        <option value="45-Loiret">45-Loiret</option>
+                        <option value="51-Marne">51-Marne</option>
+                        <option value="52-Haute Marne">52-Haute Marne</option>
+                        <option value="54-Meurthe et Moselle">54-Meurthe et Moselle</option>
+                        <option value="55-Meuse">55-Meuse</option>
+                        <option value="57-Moselle">57-Moselle</option>
+                        <option value="58-Nièvre">58-Nièvre</option>
+                        <option value="59-Nord">59-Nord</option>
+                        <option value="60-Oise">60-Oise</option>
+                        <option value="61-Orne">61-Orne</option>
+                        <option value="62-Pas de Calais">62-Pas de Calais</option>
+                        <option value="63-Puy de Dôme">63-Puy de Dôme</option>
+                        <option value="67-Bas Rhin">67-Bas Rhin</option>
+                        <option value="68-Haut Rhin">68-Haut Rhin</option>
+                        <option value="69-Rhône">69-Rhône</option>
+                        <option value="70-Haute Saône">70-Haute Saône</option>
+                        <option value="71-Saône et Loire">71-Saône et Loire</option>
+                        <option value="73-Savoie">73-Savoie</option>
+                        <option value="74-Haute Savoie">74-Haute Savoie</option>
+                        <option value="75-Paris">75-Paris</option>
+                        <option value="76-Seine Maritime">76-Seine Maritime</option>
+                        <option value="77-Seine et Marne">77-Seine et Marne</option>
+                        <option value="78-Yvelines">78-Yvelines</option>
+                        <option value="80-Somme">80-Somme</option>
+                        <option value="87-Haute Vienne">87-Haute Vienne</option>
+                        <option value="88-Vosges">88-Vosges</option>
+                        <option value="89-Yonne">89-Yonne</option>
+                        <option value="90-Territoire de Belfort">90-Territoire de Belfort</option>
+                        <option value="91-Essonne">91-Essonne</option>
+                        <option value="92-Hauts de Seine">92-Hauts de Seine</option>
+                        <option value="93-Seine Saint Denis">93-Seine Saint Denis</option>
+                        <option value="94-Val de Marne">94-Val de Marne</option>
+                        <option value="95-Val d’Oise">95-Val d’Oise</option>
+                        <option value="975-St Pierre et Miquelon">975-St Pierre et Miquelon</option>
+
+
+                    </select>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info PreviousBtns"
+                                    id="FourthPrevious" onclick="ThirdPeviousBtn();FirstUserAnswer='null' ">
+                                    Précédent
+                                </button></center>
+                        </div>
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info NextBtns"
+                                    onclick="FourthQuest()" id="FourthNext">
+                                    Suivant
+                                </button> </center>
+
+                        </div>
+                    </div>
+                    <hr id="hr3">
+                </div>
+            </div>
+
+            <div class="row" id="FifthQ">
+                <div class="col-md-12">
+                    <p class="text-center">
+                        <span>Quel est votre secteur d'activité ?</span>
+                    </p>
+                    <button type="button" class="btn btn-outline-dark btn-block"
+                        onclick="FifthUserAnswer='Prive'; SelectionFlag=false; " id="PriveBtn">
+                        Privé
+                    </button>
+                    <button type="button" class="btn btn-outline-dark btn-block"
+                        onclick="FifthUserAnswer='Public'; SelectionFlag=true; " id="PublicBtn">
+                        Public
+                    </button>
+                    <button type="button" class="btn btn-outline-dark btn-block"
+                        onclick="FifthUserAnswer='Agricole' " id="AgricoleBtn">
+                        Agricole
+                    </button>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info PreviousBtns"
+                                    id="FifthPrevious" onclick="FourthPeviousBtn();">
+                                    Précédent
+                                </button></center>
+                        </div>
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info NextBtns"
+                                    onclick="FifthQuest(FifthUserAnswer)" id="FifthNext">
+                                    Suivant
+                                </button></center>
+                        </div>
+                    </div>
+                    <hr id="hr4">
+                </div>
+            </div>
+
+            <div class="row" id="SixthQ">
+                <div class="col-md-12">
+                    <p class="text-center">
+                        <span>S'agit-il d'une entreprise publique cotisante à Action Logement ?</span>
+                    </p>
+                    <button type="button" class="btn btn-outline-dark btn-block" onclick="SixthUserAnswer=true"
+                        id="SixthYes">
+                        Oui
+                    </button>
+                    <button type="button" class="btn btn-outline-dark btn-block" onclick="SixthUserAnswer=false"
+                        id="SixthNo">
+                        Non
+                    </button>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info PreviousBtns"
+                                    id="SixthPrevious" onclick="FifthPeviousBtn();FifthUserAnswer=null ">
+                                    Précédent
+                                </button></center>
+                        </div>
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info NextBtns"
+                                    onclick="SixthQuest(SixthUserAnswer)" id="SixthNext">
+                                    Suivant
+                                </button></center>
+                        </div>
+                    </div>
+                    <hr id="hr6">
+                </div>
+            </div>
+
+            <div class="row" id="SeventhQ"  >
+                <div class="col-md-12">
+                    <p class="text-center">
+                        <span>Quel est le Revenu Fiscal de Référence figurant sur votre avis d'imposition
+                            2019 portant sur les revenus 2018 ou votre avis d'imposition 2020 portant sur les revenus
+                            2019 ?</span>
+                    </p>
+                    <div class="input-group mb-3" style="padding-left: 25%; padding-right: 25%;">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">€</span>
+                        </div>
+                        <input type="number" id="priceHolder" placeholder="0" min="1" max="999999"
+                            class="form-control text-center">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info PreviousBtns"
+                                    id="SeventhPrevious"
+                                    onclick="SixthPeviousBtn(SelectionFlag);FifthUserAnswer=null;SixthUserAnswer=null">
+                                    Précédent
+                                </button></center>
+                        </div>
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info NextBtns"
+                                    onclick="SeventhQuest()" id="SeventhNext">
+                                    Suivant
+                                </button></center>
+                        </div>
+                    </div>
+                    <hr id="hr7">
+                </div>
+            </div>
+
+            <div class="row" id="EighthQ" >
+                <div class="col-md-12">
+                    <p class="text-center">
+                        <span>Combien de personnes sont rattachées au(x) foyer(s) fiscal(ux) dont vous venez de déclarer le revenu fiscal de référence ?</span>
+                    </p>
+                    <div class="input-group mb-3" style="padding-left: 25%; padding-right: 25%;">
+                        <input type="number" id="humanHolder" placeholder="Ex:1" min="1" max="21"
+                            class="form-control text-center">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info PreviousBtns"
+                                    id="EighthPrevious" onclick="SeventhPeviousBtn();">
+                                    Précédent
+                                </button></center>
+                        </div>
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info NextBtns"
+                                    onclick="EighthQuest()" id="EighthNext">
+                                    Suivant
+                                </button></center>
+                        </div>
+                    </div>
+                    <hr id="hr7">
+                </div>
+            </div>
+
+            <div class="row" id="NinthQ">
+                <div class="col-md-12">
+                    <p class="text-center">
+                        <span> Souhaitez-vous faire des travaux d’isolation de vos murs extérieurs ou faire une
+                            installation de pompe a chaleur ?</span>
+                    </p>
+                    <button type="button" class="btn btn-outline-dark btn-block"
+                        onclick="NinthUserAnswer='Pompe a chaleur' " id="Pomp">
+                        Pompe a chaleur
+                    </button>
+                    <button type="button" class="btn btn-outline-dark btn-block"
+                        onclick="NinthUserAnswer='Isolation extérieurs' " id="ISO">
+                        Isolation extérieurs
+                    </button>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info PreviousBtns"
+                                    id="NinthPrevious" onclick="EightPeviousBtn()">
+                                    Précédent
+                                </button></center>
+                        </div>
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info NextBtns"
+                                    onclick="NinthQuest(NinthUserAnswer)" id="NinthNext">
+                                    Suivant
+                                </button></center>
+                        </div>
+                    </div>
+                    <hr id="hr9">
+                </div>
+            </div>
+
+            <form id="FormId">
+                <div class="col" onreset="FieldSize();" style="padding-left: 0%;">
+                    <div class="col col-md-6" id="LastNameDiv">
+                        <small>Nom</small>
+                        <input type="text" class="form-control" id="LastName">
+                    </div>
+                    <div class="col col-md-6" id="FirstNameDiv">
+                        <small>Prénom</small>
+                        <input type="text" class="form-control" id="FirstName">
+                    </div>
+                    <div class="col col-md-6" id="TelField">
+                        <small>Téléphone</small>
+                        <input class="form-control" type="tel" value="" placeholder="Ex:06 44 55 66 77"
+                            id="example-tel-input">
+                    </div>
+                    <div class="row" id="SubmitDiv">
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info PreviousBtns"
+                                    id="TenthPrevious" onclick="NinthPeviousBtn();NinthUserAnswer=null ">
+                                    Précédent
+                                </button></center>
+                        </div>
+                        <div class="col-md-6">
+                            <center><button type="button" class="btn btn-lg btn-outline-info NextBtns" id="Submit"
+                                    onclick="TelephoneLogic();PersonName();BridgeTest();">
+                                    Envoyer
+                                </button></center>
+                        </div>
+                        <div class="col-md-12">
+                            <center><div class="spinner-border text-success" role="status" id="Loading">
+                                <span class="sr-only">Loading...</span>
+                            </div></center>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+
+
+        <form id="DataSheet">
+            <input name="Code_postal" id="PostalCodeGoogleSheets" value=""/>
+            
+            <input name="Nom" id="LastNameGoogleSheets" value=""/>
+            
+            <input name="Prénom" id="FirstNameGoogleSheets" value=""/>
+            
+            <input name="Téléphone" id="TelephoneGoogleSheets" value=""/>
+
+            <input name="Blank_Field" />
+            
+            <input name="Q1" id="Q1GoogleSheets" value=""/>
+                     
+            <input name="Q3" id="Q3GoogleSheets" value=""/>
+       
+            <input name="Q4" id="Q4GoogleSheets" value=""/>
+           
+            <input name="Q5" id="Q5GoogleSheets" value=""/>
+            
+            <input name="Q6" id="Q6GoogleSheets" value=""/>
+         
+            <input name="Q7" id="Q7GoogleSheets" value=""/>
+        </form>
+
+</body>
+
+
+
+<script src="JS_Main.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+
+</html>
